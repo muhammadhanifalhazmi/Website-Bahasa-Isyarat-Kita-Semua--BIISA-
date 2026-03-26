@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIISA Education</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  
+  
+    /* CSS tambahan bisa ditambahkan di sini */
+    .navbar{
+      transition: all 0.3s;
+      background: none;
+    }
+    .navbar a{
+      font-size: 20px;
+    }
+    .nav-link{
+      font-size: 18px;
+    }
+    .nav-link:hover{
+      color: grey;
+    }
+    .custom-hr {
+      border-top: 1px solid #2f39a1;
+      margin-bottom: 20px;
+      height: 5px;
+    }
+    .hero{
+      margin-top: 80px;
+    }
+    .hero text{
+      margin-top: 80px;
+    }
+    
+
+    
+
+.logo-section {
+      text-align: center;
+      padding: 20px;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-container img {
+      width: 240px; 
+      height: auto;
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.2);
+    }
+    
+
+
+
+    .accordion{
+  margin: 40px 0;
+}
+.accordion .item {
+    border: none;
+    margin-bottom: 50px;
+    background: none;
+}
+.t-p{
+  color: rgb(0, 0, 0);
+  padding: 40px 30px 0px 30px;
+}
+.accordion .item .item-header h2 button.btn.btn-link {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 2.5;
+    text-decoration: none;
+}
+.accordion .item .item-header {
+    border-bottom: none;
+    background: transparent;
+    padding: 0px;
+    margin: 2px;
+}
+
+.accordion .item .item-header h2 button {
+    color: rgb(10, 8, 8);
+    font-size: 20px;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion .item .item-header h2 i {
+    float: right;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    width: 60px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+button.btn.btn-link.collapsed i {
+    transform: rotate(0deg);
+}
+
+button.btn.btn-link i {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+
+.footer{
+  background-image: -moz-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
+    background-image: -webkit-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
+    background-image: -ms-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
+}
+
+
+
+
+
+
+
+:root {
+  --green: #34A853;
+  --blueocean: #3f96be;
+  --platinum: #e5e5e5;
+  --black: #2b2d42;
+  --white: #fff;
+  --thumb: #edf2f4;
+}
+    
+.cards {
+    display: grid;
+    grid-auto-columns: 100%;
+    grid-column-gap: 10px;
+    grid-auto-flow: column;
+    padding: 25px 0px;
+    list-style: none;
+    overflow-x: scroll;
+    -ms-scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
+}
+
+.rules .card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+    scroll-snap-align: start;
+    transition: all 0.2s;
+}
+
+.rules .cards::-webkit-scrollbar {
+    height: 12px;
+}
+
+.rules .cards::-webkit-scrollbar-thumb,
+.rules .cards::-webkit-scrollbar-track {
+    border-radius: 92px;
+}
+
+.rules .cards::-webkit-scrollbar-thumb {
+    background: var(--blueocean);
+}
+
+.rules .cards::-webkit-scrollbar-track {
+    background: var(--thumb);
+}
+
+@media (min-width: 500px) {
+    .cards {
+        grid-auto-columns: calc(50% - 10px);
+        grid-column-gap: 20px;
+    }
+}
+
+@media (min-width: 700px) {
+    .cards {
+        grid-auto-columns: calc(calc(100% / 3) - 20px);
+        grid-column-gap: 30px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .cards {
+        grid-auto-columns: calc(25% - 30px);
+        grid-column-gap: 40px;
+    }
+}
+
+.rules{
+    background-image: linear-gradient(#6c7cd4, #2f39a1);
+	
+    background-repeat: no-repeat;
+}
+      
+
+p {
+  color:#000000;
+}
+
+h1 {
+  font-weight:bold;
+  color:#000000;
+}
+h3 {
+  font-weight:bold;
+  color:#ffffff;
+}
+
+@media (max-width:767px) {
+h2 {
+    margin-bottom:25px;
+    padding-top:25px;
+    font-size:24px;
+  }
+}
+
+.intro {
+  font-size:16px;
+  max-width:500px;
+  margin:0 auto;
+}
+.intro p {
+  margin-bottom:0;
+}
+
+.people {
+  padding:50px 0;
+  cursor: pointer;
+}
+.item {
+  margin-bottom:30px;
+}
+
+.item .box {
+  text-align:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  height:280px;
+  position:relative;
+  overflow:hidden;
+}
+
+.item .cover {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(31,148,255,0.75);
+  transition:opacity 0.15s ease-in;
+  opacity:0;
+  padding-top:80px;
+  color:#fff;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.15);
+}
+
+.item:hover .cover {
+  opacity:1;
+}
+
+.item .name {
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.item .title {
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#000000;
+  letter-spacing:2px;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.social {
+  font-size:18px;
+}
+ 
+.social a {
+  color:inherit;
+  margin:0 10px;
+  display:inline-block;
+  opacity:0.7;
+}
+.social a:hover {
+  opacity:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Halaman Home -->
+<section>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html"><strong>Home</strong><span class="sr-only">(current)</span></a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" href="learn.html"><strong>Learn Me</strong></a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html"><strong>Contact</strong></a>
+        </li>
+        
+      <!-- </ul> -->
+      <!-- <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="image/eng.png" height="70">
+            EN
+          </a>
+          <div class="dropdown-menu section rounded" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Indonesia</a>
+            <a class="dropdown-item" href="#">English</a>
+            Tambahkan lebih banyak bahasa jika diperlukan -->
+          <!-- </div>
+        </li>
+      </ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Login</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn  my-2 my-sm-0" type="submit" style="background-color: #2e397a; color: #fff;">Sign Up</button>
+      </form> --> 
+    </div>
+  </nav><hr class="custom-hr">
+</section>
+
+
+<section>
+  <div class="hero container ">
+		<div class="row">
+			<div class="text col-md-6" style="margin-left: -10px;">
+        <button class="btn  my-2 my-sm-0" type="submit" style="background-color: #ffffff; color: #fff;"><img src="image/logo2.png" class="mt-2" height="150" alt=""></button><br><br>
+				<h1><strong>We’re help you
+          learn sign language
+          easily and enjoyable</strong></h1><br><br>
+          <button class="btn  my-2 my-sm-0" type="submit" style="background-color: #6676cf; color: #fff; height: 60px; width: 180;"><h5>Get Started Now</h5></button>
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" style="height: 60px; width: 200;"><h5>Learn More</h5> </button><br><br><br><br>
+          <h5>Get Mobile Application On</h5>
+          <a href="#" class="btn"><img src="image/gplay.png" alt="Google Play Store" class="img-fluid mr-2" style="height: 90px; width: 300px; margin-left: -21px;"></a>
+      </div>
+			<div class="img col-md-6" style="margin-left: 10px;">
+				<div>
+					<img class="section rounded img-fluid" src="image/hero.png" height="50" >
+				</div>
+		</div>
+</section><br><br><br><br><br><br><br><br><br><br>
+
+<section class="deneb_cta">
+	<div class="container">
+		<div class="cta_wrapper">
+			<div class="row align-items-center">
+				
+					
+						<div class="col-md-4 text-center">
+              <h1 style="color: #fff;"><strong>10K+</strong></h1>
+              <h5 style="color: #fff;">Download on Play Store</h5>
+            </div>
+            <div class="col-md-4 text-center">
+              <h1 style="color: #fff;"><strong>150+</strong></h1>
+              <h5 style="color: #fff;">Communities</h5>
+            </div>
+            <div class="col-md-4 text-center">
+              <h1 style="color: #fff;"><strong>100+</strong></h1>
+              <h5 style="color: #fff;">Institutions of education supported</h5>
+            </div>
+			</div>
+		</div>
+	</div>
+</section><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<section>
+  <div class="konten1 container ">
+    <h1 class="text-center" style="font-size: 50px;">Mobile Application Interface</h1><br><br><br><br><br><br>
+		<div class="row">
+			<div class="img col-md-6">
+				<div>
+					<img class="section rounded img-fluid" src="https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg?auto=compress&cs=tinysrgb&w=1600" height="40">
+				</div>
+		  </div>
+      <div class="text col-md-6" >
+        <br><button class="btn  my-2 my-sm-0" type="submit" style="background-color: #8490d8; color:black; "><strong>Dashboard</strong></button><br><br>
+				<h1><strong>Designed to provide an intuitive, informative, and engaging user experience</strong></h1><br>
+				<h5>Create an account to make your learning process easier.</h5><br>
+          <button class="btn  my-2 my-sm-0" type="submit" style="background-color: #6676cf; color: #fff;"><strong>Learn more</strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
+          </svg></button>
+      </div>
+    </div>
+  </div>
+</section><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<section>
+  <div class="konten2 container ">
+		<div class="row">
+      <div class="text col-md-6" >
+        <br><br><br><button class="btn  my-2 my-sm-0" type="submit" style="background-color: #8490d8; color:black; "><strong>Learn Me Point</strong></button><br><br>
+				<h1><strong>User-friendly learning features</strong></h1><br>
+				<h5>Learning sign language is made easier with various materials and practical applications.</h5><br>
+          <button class="btn  my-2 my-sm-0" type="submit" style="background-color: #6676cf; color: #fff;"><strong>Learn more</strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
+          </svg></button>
+      </div>
+			<div class="img col-md-6" >
+				<div>
+					<img class="section rounded img-fluid" src="https://images.pexels.com/photos/3775532/pexels-photo-3775532.jpeg?auto=compress&cs=tinysrgb&w=1600" height="40">
+				</div>
+		  </div>
+    </div>
+  </div>
+</section><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<section class="video" style=" background-image: -moz-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
+background-image: -webkit-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
+background-image: -ms-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);">
+  <div class=" bg-cover text-white">
+    <div class="container mt-5">
+       <br><br><br></BR><h1 class=" text-center py-4 fw-bold" style="color:#ffffff;" >You Can Also Learn Via Our YouTube channel</h1>
+      <div class="row">
+       <div></div>  
+      <div class="col-md-12">
+        <br><br><div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item section rounded" src="https://www.youtube.com/embed/mukNGgweHSI?si=jFQE8wN04ie1KhMH" allowfullscreen></iframe>
+        </div><br><br><br><br>
+      </div>
+      <div></div>
+      </div>
+      </div>
+    </div>
+</section><br><br><br><br><br><br><br><br><br><br>
+
+
+  <div class="container">
+    
+
+
+</div>
+<br><br><br><br><br><br><br>
+
+<section class="logo-section">
+  <h1 class="container text-center py-5 fw-bold" style="font-size:40px">SUPPORTED BY</h1>
+<div class="logo-container">
+
+
+<img  src="https://disdikbud.banyuasinkab.go.id/wp-content/uploads/sites/269/2022/11/Logo-Tut-Wuri-Handayani-PNG-Warna.png">&nbsp;&nbsp;
+<img  src="https://lpdp.kemenkeu.go.id/storage/setting/logo/logo_1630922364.png">&nbsp;&nbsp;
+<img  src="https://upload.wikimedia.org/wikipedia/id/4/44/Logo_PENS.png">&nbsp;&nbsp;
+<img  src="https://lh6.googleusercontent.com/mQhDtsERW60V4k2QsOU8M3YmNOJ2fK6y5gthnF9V8oQWcPiZQhPl-JopnDNrh3LGVECk5tChiA63VGpy0Dh-SHNyhPP3_GboOYAybbKyZhPT-18NIVVdIhU0QlRs23YT8AvUmFPDNdLZSt9tLE7jmvw" >&nbsp;&nbsp;
+<img src="https://pelajarinfo.id/wp-content/uploads/2022/10/Kampus-Merdeka-01-768x403.png">
+
+</div>
+</section><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<section>
+  <div class="container">
+    <h1 class="text-center" style="font-size: 40px;"><strong>Frequently Asked Questions</strong></h1><br><br>
+    <div class="accordion" id="accordionExample">
+      <div class="item">
+         <div class="item-header" id="headingOne">
+            <h2 class="mb-0">
+               <button class="btn btn-link" type="button" data-toggle="collapse"
+                  data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+               <strong>Question 1</strong>
+               <i class="fa fa-angle-down"></i>
+               </button>
+            </h2>
+         </div>
+         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+            data-parent="#accordionExample">
+            <div class="t-p">
+    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="item-header" id="headingTwo">
+            <h2 class="mb-0">
+               <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <strong>Question 2</strong>
+               <i class="fa fa-angle-down"></i>
+               </button>
+            </h2>
+         </div>
+         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+            data-parent="#accordionExample">
+            <div class="t-p">
+    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="item-header" id="headingThree">
+            <h2 class="mb-0">
+               <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseThree" aria-expanded="false"
+                  aria-controls="collapseThree">
+                  <strong>Question 3</strong>
+               <i class="fa fa-angle-down"></i>
+               </button>
+            </h2>
+         </div>
+         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+            data-parent="#accordionExample">
+            <div class="t-p">
+    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="item-header" id="headingFour">
+            <h2 class="mb-0">
+               <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseFour" aria-expanded="false"
+                  aria-controls="collapseFour">
+                  <strong>Question 4</strong>
+               <i class="fa fa-angle-down"></i>
+               </button>
+            </h2>
+         </div>
+         <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+            data-parent="#accordionExample">
+            <div class="t-p">
+               It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            </div>
+         </div>
+      </div>
+    </div>
+    </div>
+</section><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<section class="footer">
+  <footer class="w-100 py-4 flex-shrink-0">
+    <div class="container py-4">
+        <div class="row gy-4 gx-5">
+            <div class="col-lg-4 col-md-6">
+                <h5 class="h1 text-white">BIISA</h5>
+                <p class="small text-white">An Indonesian sign language application and site used by deaf people.</p>
+                <p class="small text-white mb-0">&copy; BIISA. All rights reserved.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                </svg>&nbsp;LOCATION</h5>
+                <p class="text-white mb-3">Kampus Politeknik 
+                  ElektronikaNegeri 
+                  Surabaya, Jl. Raya ITS - 
+                  Kampus PENS, Sukolilo, 
+                  Surabaya, Jawa Timur.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">CONTACT US</h5>
+                <ul class="list-unstyled text-muted">
+                    <li><a href="#" class="text-white mb-3">082984276108</a></li>
+                    <li><a href="#" class="text-white mb-3">biisa@gmail.com</a></li>
+                    <li><a href="#" class="text-white mb-3">biisaofficial</a></li>
+                    <li><a href="#" class="text-white mb-3">biisa.realofficial</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">FOLLOW US ON</h5>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16" color="white">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                </svg>
+                &nbsp;&nbsp;
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16" color="white">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"/>
+                </svg>
+                &nbsp;&nbsp;
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16" color="white">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                </svg>
+                &nbsp;&nbsp;
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16" color="white">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                </svg>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+</section>
+  
+
+  <!-- Bootstrap JS -->
+  
+  
+  
+  <script>
+    $(document).ready(function () {
+          $('.card').click(function () {
+              var name = $(this).data('name');
+              var price = $(this).data('price');
+              var description = $(this).data('description');
+              
+              $('#productName').text(name);
+              $('#productPrice').text(price);
+              $('#productDescription').text(description);
+              
+              $('#productModalLabel').text(name);
+              $('#modalProductDescription').text(description);
+              
+              $('.product-details').show();
+          });
+          
+          $('#productModal').on('hidden.bs.modal', function () {
+              $('.product-details').hide();
+          });
+      });
+      
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
