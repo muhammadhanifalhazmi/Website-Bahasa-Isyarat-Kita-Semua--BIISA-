@@ -3,385 +3,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BIISA Education</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
-  <style>
-    .navbar{
-      transition: all 0.3s;
-      background: none;
-    }
-    .navbar a{
-      font-size: 20px;
-    }
-    .nav-link{
-      font-size: 18px;
-    }
-    .nav-link:hover{
-      color: grey;
-    }
-    .custom-hr {
-      border-top: 1px solid #2f39a1;
-      margin-bottom: 20px;
-      height: 5px;
-    }
+  <title>Contact | BIISA Education</title>
 
+  <!-- Bootstrap 5 + Icon + Font -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .deneb_cta .cta_wrapper {
-    padding: 45px 50px 42px;
-    max-width: 970px;
-    border-radius: 15px;
-    margin: auto;
-    margin-bottom: -135px;
-    position: relative;
-    background-image: -moz-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
-    background-image: -webkit-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
-    background-image: -ms-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
-    box-shadow: 2.5px 4.33px 15px 0px rgba(33, 45, 56, 0.4);
-    z-index: 1;
-}
-.deneb_cta .cta_wrapper:after {
-    content: "";
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
-.deneb_cta .cta_wrapper .cta_content h3 {
-    color: #fff;
-    font-weight: bold;
-}
-@media (max-width: 767px) {
-    .deneb_cta .cta_wrapper .cta_content h3 {
-        font-size: 24px;
-    }
-}
-.deneb_cta .cta_wrapper .cta_content h3:after {
-    content: "";
-    display: block;
-    max-width: 110px;
-    height: 2px;
-    margin-top: 13px;
-    margin-bottom: 24px;
-}
-.deneb_cta .cta_wrapper .cta_content p {
-    color: #fff;
-}
-.deneb_cta .cta_wrapper .button_box {
-    float: right;
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .deneb_cta .cta_wrapper .button_box {
-        float: none;
-        text-align: left;
-        margin-top: 30px;
-    }
-}
-@media (max-width: 767px) {
-    .deneb_cta .cta_wrapper .button_box {
-        float: none;
-        text-align: center;
-        margin-top: 30px;
-    }
-}
-.deneb_cta .cta_wrapper .button_box .deneb_btn {
-    background: #fff;
-    color: #6c7cd4;
-}
-.deneb_cta .cta_wrapper .button_box .deneb_btn:hover,
-.deneb_cta .cta_wrapper .button_box .deneb_btn:focus {
-    box-shadow: 2.5px 4.33px 15px 0px rgba(0, 0, 0, 0.15);
-} 
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-
-.accordion{
-  margin: 40px 0;
-}
-.accordion .item {
-    border: none;
-    margin-bottom: 50px;
-    background: none;
-}
-.t-p{
-  color: rgb(0, 0, 0);
-  padding: 40px 30px 0px 30px;
-}
-.accordion .item .item-header h2 button.btn.btn-link {
-    background: #ffffff;
-    color: rgb(0, 0, 0);
-    border-radius: 0px;
-    
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 2.5;
-    text-decoration: none;
-}
-.accordion .item .item-header {
-    border-bottom: none;
-    background: transparent;
-    padding: 0px;
-    margin: 2px;
-}
-
-.accordion .item .item-header h2 button {
-    color: rgb(10, 8, 8);
-    font-size: 20px;
-    padding: 15px;
-    display: block;
-    width: 100%;
-    text-align: left;
-}
-
-.accordion .item .item-header h2 i {
-    float: right;
-    font-size: 30px;
-    color: #ffffff;
-    background-color: rgb(0, 0, 0);
-    width: 60px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-}
-
-button.btn.btn-link.collapsed i {
-    transform: rotate(0deg);
-}
-
-button.btn.btn-link i {
-    transform: rotate(180deg);
-    transition: 0.5s;
-}
-
-
-
-
-
-    .footer{
-    background-image: -moz-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
-    background-image: -webkit-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
-    background-image: -ms-linear-gradient(0deg, #6c7cd4 0%, #2f39a1 100%);
-    }
-    
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <section>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <!-- <img src="image/logo.png" class="mt-2" height="40" alt=""> -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- Navbar -->
+  <nav class="navbar navbar-biisa navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="image/logo2.png" alt="BIISA Logo">
+        <span>BIISA</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html"><strong>Home</strong></a>
-          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <li class="nav-item">
-            <a class="nav-link" href="learn.html"><strong>Learn Me</strong></a>
-          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <li class="nav-item active">
-            <a class="nav-link" href="contact.html"><strong>Contact</strong><span class="sr-only">(current)</span></a>
-          </li>
-          
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="learn.html">Learn Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <!-- <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="image/eng.png" height="70">
-              EN
-            </a>
-            <div class="dropdown-menu section rounded" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Indonesia</a>
-              <a class="dropdown-item" href="#">English</a>
-              
-            </div>
-          </li>
-        </ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   -->
-        <!-- <form class="form-inline my-2 my-lg-0">
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Login</button>&nbsp;&nbsp;&nbsp;
-          <button class="btn  my-2 my-sm-0" type="submit" style="background-color: #2e397a; color: #fff;">Sign Up</button>
-        </form> -->
+        <div class="d-flex align-items-center justify-content-center">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+        </div>
       </div>
-    </nav><hr class="custom-hr">
-  </section><br><br><br><br><br>
+    </div>
+  </nav>
 
-  <h1 class="text-center"><u><strong>CONTACT</strong></u></h1>
-  <h3 class="text-center"><strong>If you have any questions, you can send an email or contact us via WhatsApp.</strong></h3>
+  <!-- Page header -->
+  <section class="hero" style="min-height: 56vh; padding: 160px 0 80px;">
+    <div class="hero-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="container text-center" data-aos="fade-up">
+      <span class="badge-chip mb-3"><span class="dot"></span> We'd love to hear from you</span>
+      <h1 class="display-4 fw-bold mt-3">CONTACT <span class="text-gradient">US</span></h1>
+      <p class="hero-sub mx-auto">
+        If you have any questions, you can send an email or contact us via WhatsApp.
+      </p>
+    </div>
+  </section>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
-  <section class="deneb_cta">
+  <!-- Contact info -->
+  <section class="section-pad pt-0">
     <div class="container">
-      <br><br><br><br>
-      <div class="cta_wrapper">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <div class="cta_content">
-              <h3>Contact</h3>
-              <p>If you have any questions, you can send an email or contact us via WhatsApp.</p>
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+          <div class="info-card">
+            <span class="icon-btn"><i class="fa-brands fa-whatsapp"></i></span>
+            <h5 class="fw-bold">WhatsApp</h5>
+            <p>082984276108</p>
+            <a href="https://wa.me/6282984276108" target="_blank" rel="noopener" class="btn btn-ghost btn-sm mt-3">Chat Sekarang</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="info-card">
+            <span class="icon-btn"><i class="fa-solid fa-envelope"></i></span>
+            <h5 class="fw-bold">Email</h5>
+            <p>biisa@gmail.com</p>
+            <a href="mailto:biisa@gmail.com" class="btn btn-ghost btn-sm mt-3">Kirim Email</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="info-card">
+            <span class="icon-btn"><i class="fa-brands fa-instagram"></i></span>
+            <h5 class="fw-bold">Instagram</h5>
+            <p>@biisa.realofficial</p>
+            <a href="#" class="btn btn-ghost btn-sm mt-3">Ikuti Kami</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="info-card">
+            <span class="icon-btn"><i class="fa-solid fa-location-dot"></i></span>
+            <h5 class="fw-bold">Location</h5>
+            <p>Kampus PENS, Sukolilo, Surabaya</p>
+            <a href="#" class="btn btn-ghost btn-sm mt-3">Lihat Peta</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact form -->
+  <section class="section-pad pt-0">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5" data-aos="fade-right">
+          <span class="feature-chip mb-4">Send a Message</span>
+          <h2 class="fw-bold mt-3 mb-4">Bersama, mari wujudkan <span class="text-gradient">komunikasi tanpa batas</span></h2>
+          <p class="mb-4">
+            Punya pertanyaan, saran, atau ingin bekerja sama dengan BIISA? Kirim pesan melalui form di
+            samping atau hubungi kami langsung melalui kontak yang tersedia.
+          </p>
+          <div class="d-flex align-items-center gap-3 mt-4">
+            <img src="image/logo.png" alt="BIISA" style="height: 64px;">
+            <div>
+              <h5 class="fw-bold mb-0">BIISA Team</h5>
+              <p class="small mb-0">Politik Elektronika Negeri Surabaya</p>
             </div>
           </div>
-          <div class="col-lg-5">
-            <div class="button_box">
-              <button class="btn btn-light btn-lg action-button" type="button"><i class="fab fa-google fab-icon">&nbsp;Mail</i></button>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="form-glass">
+            <div id="formAlert" class="alert d-none" role="alert"></div>
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="contactName" class="form-label">Nama</label>
+                  <input type="text" class="form-control" id="contactName" placeholder="Nama lengkap Anda">
+                </div>
+                <div class="col-md-6">
+                  <label for="contactEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="contactEmail" placeholder="email@contoh.com">
+                </div>
+                <div class="col-12">
+                  <label for="contactMessage" class="form-label">Pesan</label>
+                  <textarea class="form-control" id="contactMessage" rows="5" placeholder="Tulis pesan atau pertanyaan Anda..."></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-biisa w-100">
+                    <i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad pt-0">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="display-6 fw-bold">Frequently Asked Questions</h2>
+        <p class="intro mx-auto">Pertanyaan yang sering diajukan sebelum menghubungi tim BIISA.</p>
+      </div>
+
+      <div class="accordion accordion-biisa" id="faqAccordion" data-aos="fade-up">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              Berapa lama waktu belajar bisa menyelesaikan materi alfabet?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sangat fleksibel. Dengan berlatih 30 menit per hari, umumnya alfabet BISINDO maupun SIBI
+              dapat dikuasai dalam sekitar 2–4 minggu. Konsistensi adalah kuncinya.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              Apakah materi di website sama dengan aplikasi mobile?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Ya. Website dan aplikasi mobile BIISA memiliki materi alfabet yang sama dan saling
+              melengkapi. Website cocok untuk belajar di laptop/komputer, sedangkan aplikasi praktis
+              dibawa ke mana pun.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              Bisakah saya berkontribusi atau menjadi relawan BIISA?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Pasti bisa! BIISA selalu terbuka untuk relawan, pengajar, dan kolaborator. Silakan kirim
+              pesan melalui form kontak di halaman ini atau hubungi kami via email.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+              Apakah data yang saya kirim di form aman?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Ya. Form kontak membuka aplikasi email Anda untuk mengirim pesan, sehingga data Anda
+              tidak tersimpan di server website dan hanya dikirimkan langsung kepada tim BIISA.
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-  <section>
-    <div class="container">
-      <h1 class="text-center" style="font-size: 40px;"><strong>Frequently Asked Questions</strong></h1><br><br>
-      <div class="accordion" id="accordionExample">
-        <div class="item">
-           <div class="item-header" id="headingOne">
-              <h2 class="mb-0">
-                 <button class="btn btn-link" type="button" data-toggle="collapse"
-                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                 <strong>Question 1</strong>
-                 <i class="fa fa-angle-down"></i>
-                 </button>
-              </h2>
-           </div>
-           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-              data-parent="#accordionExample">
-              <div class="t-p">
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-              </div>
-           </div>
-        </div>
-        <div class="item">
-           <div class="item-header" id="headingTwo">
-              <h2 class="mb-0">
-                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <strong>Question 2</strong>
-                 <i class="fa fa-angle-down"></i>
-                 </button>
-              </h2>
-           </div>
-           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-              data-parent="#accordionExample">
-              <div class="t-p">
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-              </div>
-           </div>
-        </div>
-        <div class="item">
-           <div class="item-header" id="headingThree">
-              <h2 class="mb-0">
-                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                    data-target="#collapseThree" aria-expanded="false"
-                    aria-controls="collapseThree">
-                    <strong>Question 3</strong>
-                 <i class="fa fa-angle-down"></i>
-                 </button>
-              </h2>
-           </div>
-           <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-              data-parent="#accordionExample">
-              <div class="t-p">
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-              </div>
-           </div>
-        </div>
-        <div class="item">
-           <div class="item-header" id="headingFour">
-              <h2 class="mb-0">
-                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                    data-target="#collapseFour" aria-expanded="false"
-                    aria-controls="collapseFour">
-                    <strong>Question 4</strong>
-                 <i class="fa fa-angle-down"></i>
-                 </button>
-              </h2>
-           </div>
-           <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
-              data-parent="#accordionExample">
-              <div class="t-p">
-                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-              </div>
-           </div>
-        </div>
-      </div>
-      </div>
-  </section><br><br><br><br><br><br>
-
-  
-
-  <section class="footer">
-    <footer class="w-100 py-4 flex-shrink-0">
-      <div class="container py-4">
-          <div class="row gy-4 gx-5">
-              <div class="col-lg-4 col-md-6">
-                  <h5 class="h1 text-white">BIISA</h5>
-                  <p class="small text-white">An Indonesian sign language application and site used by deaf people.</p>
-                  <p class="small text-white mb-0">&copy; BIISA. All rights reserved.</p>
-              </div>
-              <div class="col-lg-2 col-md-6">
-                  <h5 class="text-white mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
-                  </svg>&nbsp;LOCATION</h5>
-                  <p class="text-white mb-3">Kampus Politeknik 
-                    ElektronikaNegeri 
-                    Surabaya, Jl. Raya ITS - 
-                    Kampus PENS, Sukolilo, 
-                    Surabaya, Jawa Timur.</p>
-              </div>
-              <div class="col-lg-2 col-md-6">
-                  <h5 class="text-white mb-3">CONTACT US</h5>
-                  <ul class="list-unstyled text-muted">
-                      <li><a href="#" class="text-white mb-3">082984276108</a></li>
-                      <li><a href="#" class="text-white mb-3">biisa@gmail.com</a></li>
-                      <li><a href="#" class="text-white mb-3">biisaofficial</a></li>
-                      <li><a href="#" class="text-white mb-3">biisa.realofficial</a></li>
-                  </ul>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                  <h5 class="text-white mb-3">FOLLOW US ON</h5>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16" color="white">
-                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-                  </svg>
-                  &nbsp;&nbsp;
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16" color="white">
-                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"/>
-                  </svg>
-                  &nbsp;&nbsp;
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16" color="white">
-                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
-                  </svg>
-                  &nbsp;&nbsp;
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16" color="white">
-                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                  </svg>
-                  
-              </div>
-          </div>
-      </div>
-  </footer>
   </section>
-    
 
-  
+  <!-- Footer -->
+  <footer class="footer-biisa">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6">
+          <h1 class="h4 fw-bold mb-3">BIISA</h1>
+          <p class="small mb-2">An Indonesian sign language application and site used by deaf people.</p>
+          <p class="small mb-0">&copy; BIISA. All rights reserved.</p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="fw-bold mb-3"><i class="fa-solid fa-location-dot me-2"></i>LOCATION</h5>
+          <p class="small mb-0">Kampus Politeknik Elektronika Negeri Surabaya, Jl. Raya ITS - Kampus PENS, Sukolilo, Surabaya, Jawa Timur.</p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="fw-bold mb-3">CONTACT US</h5>
+          <ul class="footer-links small">
+            <li><a href="tel:082984276108">082984276108</a></li>
+            <li><a href="mailto:biisa@gmail.com">biisa@gmail.com</a></li>
+            <li><a href="#">biisaofficial</a></li>
+            <li><a href="#">biisa.realofficial</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5 class="fw-bold mb-3">FOLLOW US ON</h5>
+          <div class="social-row">
+            <a href="#" class="social-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-circle" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-circle" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center small">
+        <span>Built with <i class="fa-solid fa-heart text-danger"></i> by BIISA Team</span>
+        <span>Wirausaha Merdeka — PENS Surabaya</span>
+      </div>
+    </div>
+  </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    
-  </script>
+  <!-- Back to top -->
+  <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
