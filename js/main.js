@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   initThemeToggle();
+  initAccessibility();
   initNavbar();
   initBackToTop();
   initAOS();
   initTabActivator();
   renderAlphabetCards();
+  initQuiz();
   initContactForm();
 });
 
@@ -94,7 +96,7 @@ function initBackToTop() {
 
 /* ===== AOS ===== */
 function initAOS() {
-  if (window.AOS) {
+  if (window.AOS && !document.documentElement.hasAttribute("data-reduced-motion")) {
     AOS.init({
       duration: 800,
       once: true,
@@ -102,6 +104,135 @@ function initAOS() {
       easing: "ease-out-cubic"
     });
   }
+}
+
+/* ===== Accessibility panel ===== */
+function getAccessSettings() {
+  try {
+    return JSON.parse(localStorage.getItem("biisa-access")) || {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function applyAccessSettings() {
+  const html = document.documentElement;
+  const s = getAccessSettings();
+
+  html.setAttribute("data-access-font", s.fontScale || "a");
+  if (s.contrast) {
+    html.setAttribute("data-high-contrast", "");
+  } else {
+    html.removeAttribute("data-high-contrast");
+  }
+  if (s.motion) {
+    html.setAttribute("data-reduced-motion", "");
+  } else {
+    html.removeAttribute("data-reduced-motion");
+  }
+}
+
+function saveAccessSettings(s) {
+  localStorage.setItem("biisa-access", JSON.stringify(s));
+  applyAccessSettings();
+  syncAccessPanelUI();
+}
+
+function injectAccessPanel() {
+  const panelHTML =
+    '<div class="access-panel" id="accessPanel" aria-hidden="true">' +
+    '<div class="access-head"><span><i class="fa-solid fa-universal-access me-2"></i>Aksesibilitas</span>' +
+    '<button class="access-close" id="accessClose" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button></div>' +
+    '<div class="access-body">' +
+    '<div class="access-heading"><i class="fa-solid fa-text-height"></i>Ukuran Teks</div>' +
+    '<div class="access-size">' +
+    '<button data-size="a" aria-label="Ukuran teks kecil">A</button>' +
+    '<button data-size="b" aria-label="Ukuran teks sedang">A</button>' +
+    '<button data-size="c" aria-label="Ukuran teks besar">A</button></div>' +
+    '<label class="access-label">Kontras Tinggi</label>' +
+    '<label class="switch"><input type="checkbox" id="accessContrast"><span class="track"></span>Mode kontras tinggi</label>' +
+    '<label class="access-label">Kurangi Animasi</label>' +
+    '<label class="switch"><input type="checkbox" id="accessMotion"><span class="track"></span>Matikan animasi</label>' +
+    '<button class="btn btn-ghost access-reset" id="accessReset">Reset Pengaturan</button>' +
+    '</div></div>' +
+    '<button class="access-float" id="accessToggle" aria-label="Buka pengaturan aksesibilitas"><i class="fa-solid fa-universal-access"></i></button>';
+
+  document.body.insertAdjacentHTML("beforeend", panelHTML);
+}
+
+function syncAccessPanelUI() {
+  const s = getAccessSettings();
+
+  const sizeBtns = document.querySelectorAll(".access-size button");
+  sizeBtns.forEach(function (btn) {
+    btn.classList.toggle("active", btn.getAttribute("data-size") === (s.fontScale || "a"));
+  });
+
+  const contrast = document.getElementById("accessContrast");
+  if (contrast) contrast.checked = !!s.contrast;
+
+  const motion = document.getElementById("accessMotion");
+  if (motion) motion.checked = !!s.motion;
+}
+
+function initAccessibility() {
+  injectAccessPanel();
+  applyAccessSettings();
+  syncAccessPanelUI();
+
+  const panel = document.getElementById("accessPanel");
+  const toggle = document.getElementById("accessToggle");
+  const close = document.getElementById("accessClose");
+  const reset = document.getElementById("accessReset");
+
+  function openPanel() {
+    panel.classList.add("open");
+    panel.setAttribute("aria-hidden", "false");
+  }
+  function closePanel() {
+    panel.classList.remove("open");
+    panel.setAttribute("aria-hidden", "true");
+  }
+
+  toggle.addEventListener("click", function () {
+    panel.classList.contains("open") ? closePanel() : openPanel();
+  });
+  close.addEventListener("click", closePanel);
+
+  document.querySelectorAll(".access-size button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const s = getAccessSettings();
+      s.fontScale = btn.getAttribute("data-size");
+      saveAccessSettings(s);
+    });
+  });
+
+  const contrast = document.getElementById("accessContrast");
+  contrast.addEventListener("change", function () {
+    const s = getAccessSettings();
+    s.contrast = contrast.checked;
+    saveAccessSettings(s);
+  });
+
+  const motion = document.getElementById("accessMotion");
+  motion.addEventListener("change", function () {
+    const s = getAccessSettings();
+    s.motion = motion.checked;
+    saveAccessSettings(s);
+    if (window.AOS && !motion.checked) {
+      initAOS();
+    }
+  });
+
+  reset.addEventListener("click", function () {
+    localStorage.removeItem("biisa-access");
+    applyAccessSettings();
+    syncAccessPanelUI();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closePanel();
+  });
 }
 
 /* ===== Tab activator (link dari luar tab list) ===== */
@@ -130,6 +261,12 @@ function initTabActivator() {
 /* ===== Alphabet cards generator ===== */
 var ALPHABETS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+function getAlphabetImages(type) {
+  return ALPHABETS.split("").map(function (ch) {
+    return { letter: ch, image: "image/" + type + "_" + ch + ".png" };
+  });
+}
+
 function renderAlphabetCards() {
   document.querySelectorAll("[data-alphabet]").forEach(function (container) {
     const type = container.getAttribute("data-alphabet"); // "BISINDO" | "SIBI"
@@ -144,9 +281,7 @@ function renderAlphabetCards() {
     });
 
     if (letters.length === 0) {
-      ALPHABETS.split("").forEach(function (ch) {
-        letters.push({ letter: ch, image: "image/" + type + "_" + ch + ".png" });
-      });
+      letters.push.apply(letters, getAlphabetImages(type));
     }
 
     const wrapper = document.createElement("div");
@@ -166,6 +301,191 @@ function renderAlphabetCards() {
 
     container.appendChild(wrapper);
   });
+}
+
+/* ===== Quiz / Practice mode ===== */
+var quiz = {
+  type: "BISINDO",
+  mode: "signToLetter",
+  count: 10,
+  questions: [],
+  idx: 0,
+  score: 0,
+  answered: false
+};
+
+function initQuiz() {
+  const setup = document.getElementById("quizSetup");
+  if (!setup) return;
+
+  const body = document.getElementById("quizBody");
+  const result = document.getElementById("quizResult");
+  const options = document.getElementById("quizOptions");
+  const promptEl = document.getElementById("quizPrompt");
+  const feedback = document.getElementById("quizFeedback");
+  const nextBtn = document.getElementById("quizNext");
+  const progressText = document.getElementById("quizProgressText");
+  const scoreText = document.getElementById("quizScoreText");
+  const progressBar = document.getElementById("quizProgressBar");
+  const resultText = document.getElementById("quizResultText");
+  const setupBtns = setup.querySelectorAll(".quiz-setup-btn");
+
+  setupBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      btn.parentElement.querySelectorAll(".quiz-setup-btn").forEach(function (b) {
+        b.classList.remove("active");
+      });
+      btn.classList.add("active");
+
+      if (btn.hasAttribute("data-quiz-type")) quiz.type = btn.getAttribute("data-quiz-type");
+      if (btn.hasAttribute("data-quiz-mode")) quiz.mode = btn.getAttribute("data-quiz-mode");
+      if (btn.hasAttribute("data-quiz-count")) quiz.count = parseInt(btn.getAttribute("data-quiz-count"), 10);
+    });
+  });
+
+  document.getElementById("quizStart").addEventListener("click", startQuiz);
+  document.getElementById("quizRetry").addEventListener("click", startQuiz);
+  document.getElementById("quizChange").addEventListener("click", function () {
+    result.classList.add("d-none");
+    setup.classList.remove("d-none");
+    body.classList.add("d-none");
+  });
+
+  nextBtn.addEventListener("click", function () {
+    quiz.idx++;
+    if (quiz.idx < quiz.questions.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  function startQuiz() {
+    const letters = getAlphabetImages(quiz.type);
+    quiz.score = 0;
+    quiz.idx = 0;
+    quiz.questions = [];
+
+    const pool = letters.slice();
+    for (let i = 0; i < quiz.count; i++) {
+      const pick = pool.splice(Math.floor(Math.random() * pool.length), 1)[0];
+      if (!pick) break;
+      quiz.questions.push({
+        letter: pick.letter,
+        image: pick.image,
+        options: buildOptions(pick.letter, letters)
+      });
+    }
+
+    setup.classList.add("d-none");
+    result.classList.add("d-none");
+    body.classList.remove("d-none");
+    renderQuestion();
+  }
+
+  function buildOptions(correctLetter, letters) {
+    const wrong = letters.filter(function (l) {
+      return l.letter !== correctLetter;
+    });
+    const shuffledWrong = wrong.slice().sort(function () {
+      return Math.random() - 0.5;
+    }).slice(0, 3);
+
+    const optionLetters = shuffledWrong.map(function (l) {
+      return l.letter;
+    });
+    optionLetters.push(correctLetter);
+    optionLetters.sort(function () {
+      return Math.random() - 0.5;
+    });
+    return optionLetters;
+  }
+
+  function renderQuestion() {
+    quiz.answered = false;
+    nextBtn.classList.add("d-none");
+    feedback.textContent = "";
+    options.innerHTML = "";
+
+    const q = quiz.questions[quiz.idx];
+    progressText.textContent = "Soal " + (quiz.idx + 1) + " dari " + quiz.questions.length;
+    scoreText.textContent = "Skor: " + quiz.score;
+    progressBar.style.width = (((quiz.idx + 1) / quiz.questions.length) * 100) + "%";
+
+    if (quiz.mode === "signToLetter") {
+      promptEl.innerHTML = '<img src="' + q.image + '" alt="Isyarat huruf ' + q.letter + '" class="quiz-prompt-img" style="max-width:200px;">';
+      q.options.forEach(function (letter) {
+        const btn = document.createElement("button");
+        btn.className = "quiz-opt-btn";
+        btn.textContent = letter;
+        btn.addEventListener("click", function () {
+          guess(letter, btn, null);
+        });
+        options.appendChild(btn);
+      });
+    } else {
+      promptEl.innerHTML = '<div class="quiz-prompt-letter">' + q.letter + "</div>";
+      const byLetter = {};
+      getAlphabetImages(quiz.type).forEach(function (l) {
+        byLetter[l.letter] = l.image;
+      });
+      q.options.forEach(function (letter) {
+        const btn = document.createElement("button");
+        btn.className = "quiz-opt-btn quiz-opt-img";
+        btn.innerHTML = '<img src="' + byLetter[letter] + '" alt="Pilihan huruf ' + letter + '">';
+        btn.addEventListener("click", function () {
+          guess(letter, btn, null);
+        });
+        options.appendChild(btn);
+      });
+    }
+  }
+
+  function guess(selectedLetter, btn) {
+    if (quiz.answered) return;
+    quiz.answered = true;
+
+    const correct = quiz.questions[quiz.idx].letter;
+    const correctBtn = Array.prototype.slice.call(options.querySelectorAll(".quiz-opt-btn"))[
+      quiz.questions[quiz.idx].options.indexOf(correct)
+    ];
+
+    if (selectedLetter === correct) {
+      btn.classList.add("opt-correct");
+      quiz.score++;
+      feedback.innerHTML = '<span class="text-success"><i class="fa-solid fa-circle-check me-2"></i>Benar! Jawaban: ' + correct + "</span>";
+    } else {
+      btn.classList.add("opt-wrong");
+      if (correctBtn) correctBtn.classList.add("opt-correct");
+      feedback.innerHTML = '<span class="text-danger"><i class="fa-solid fa-circle-xmark me-2"></i>Kurang tepat. Jawaban: ' + correct + "</span>";
+    }
+
+    options.querySelectorAll(".quiz-opt-btn").forEach(function (b) {
+      b.disabled = true;
+    });
+    scoreText.textContent = "Skor: " + quiz.score;
+    nextBtn.classList.remove("d-none");
+  }
+
+  function showResult() {
+    body.classList.add("d-none");
+    result.classList.remove("d-none");
+
+    const pct = Math.round((quiz.score / quiz.questions.length) * 100);
+    let stars = "";
+    if (pct === 100) stars = "&#9733;&#9733;&#9733;";
+    else if (pct >= 70) stars = "&#9733;&#9733;";
+    else if (pct >= 40) stars = "&#9733;";
+
+    const starsEl = result.querySelector(".quiz-result-stars");
+    if (starsEl) starsEl.innerHTML = stars;
+
+    resultText.textContent = "Benar " + quiz.score + " dari " + quiz.questions.length + " (" + pct + "%). " +
+      (pct === 100 ? "Sempurna! Kamu sudah menguasai alfabet " + quiz.type + "!" :
+      pct >= 70 ? "Hebat! Terus latih lagi untuk hasil maksimal." :
+      pct >= 40 ? "Lumayan. Coba pelajari kembali kartu alfabet di atas." :
+      "Jangan menyerah! Pelajari alfabet lalu coba lagi.");
+  }
 }
 
 /* ===== Contact form ===== */
